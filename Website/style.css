@@ -1,0 +1,400 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+
+    /*========== COLORS ==========*/
+    /* Color mode HSL(hue, saturation, lightness) */
+    --main-color: blue;
+    --gradient-color: linear-gradient(90deg,
+                        hsl(210, 55%, 20%),
+                        hsl(192, 62%, 25%));
+    --title-color: grey;
+    --text-color: #64748B;
+    --white-color: #fff;
+    --body-color: rgb(248,250,252);
+
+    /*========== Font and typography ==========*/
+    /*0.5rem = 8px | 1rem = 16px*/
+    --body-font: 'Roboto', sans-serif;;
+    --biggest-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.813rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Z-index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+}
+
+
+
+/*=============== BASE ===============*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+}
+
+body {
+    background-color: var(--body-color);
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/*=============== SIDEBAR ===============*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    background-color: var(--white-color);
+    padding: 1rem 2rem;
+}
+
+.logo img {
+    width: 180px;
+    margin: 1rem 0;
+}
+
+.menu-sections h3 {
+    font-size: var(--small-font-size);
+    font-weight:var(--font-semi-bold);
+    color: var(--text-color);
+}
+
+.menu-sections ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.bottom-section {
+position: absolute;
+bottom: 1rem;
+left: 2rem;
+}
+
+.leave {
+    margin-bottom: 1rem;
+    color: red;
+}
+.leave i {
+    margin-right: 10px;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight:var(--font-semi-bold);
+}
+.creator img {
+    margin-right: 0.5rem;
+}
+
+
+
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+section {
+    padding: 0rem 3rem;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: rgb(232, 232, 232);
+    margin: 1rem 0;
+}
+
+.subtitle {
+    font-size: var(--normal-font-size);
+    font-weight:var(--font-noramal);
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.btn {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--main-color);
+    color: var(--white-color);
+    opacity: 0.8;
+}
+
+.white-container {
+    background: #fff;
+    padding: 1.2rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+}
+
+.white-container form {
+    width: 100%;
+    display: grid;
+    gap: 1.2rem;
+}
+
+.white-container form > div {
+display: flex;
+gap: 1.2rem;
+}
+
+.white-container form input,
+.white-container form select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+
+/*=============== HEADER & NAV ===============*/
+.header {
+   margin-left: 15%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+.info-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.info-btn a {
+    color: var(--text-color);
+}
+
+.selectors {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.selectors select:nth-child(2) {
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+.selectors select {
+    padding: 0.5rem;
+    color: var(--text-color); 
+    border: 1px solid var(--text-color);
+    font-size: var(--normal-font-size);
+    border-radius: 10px;
+}
+
+.selectors div {
+    position: relative;
+}
+
+.location {
+position: absolute;
+z-index: 1;
+top: 10px;
+left:10px;
+color: var(--text-color);
+}
+
+.bell {
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    border-radius: 50%;
+    padding: 0.5rem;
+    border: 1px solid var(--text-color);
+}
+
+
+/*=============== HERO SECTION ===============*/
+.hero-section {
+    padding: 1rem 3rem;
+}
+
+.hero-section > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back-button button {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+.back-button a{
+    margin-left: 1rem;
+    color: #000;
+}
+
+.hero-container form {
+    grid-template-columns: 1fr 2fr 2fr;
+}
+
+.hero-container form > div {
+    display: flex;
+}
+
+
+/*=============== YEARS SECTION ===============*/
+
+.years-section {
+    padding: 1rem 3rem;
+}
+
+.years {
+    display: flex;
+    align-items: center;
+}
+
+.years h2 {
+    padding: 1.5rem;
+    margin: 0 1rem;
+    font-size: var(--noraml-font-size);
+}
+
+.years h2.active {
+    color: var(--main-color);
+    border-bottom : 2px solid var(--main-color);
+}
+
+.years-section form input {
+    padding: 0.7rem 10rem 0.7rem 0.7rem;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    margin: 1.5rem 1rem;
+}
+
+
+/*=============== SECURITY SECTION ===============*/
+
+.security form {
+    grid-template-columns: repeat(2,1fr);
+}
+
+/*=============== TRAIN SECTION ===============*/
+
+.train form {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.train form >div {
+    display: flex;
+}
+
+/*=============== TRAIN ROAD SECTION ===============*/
+
+.train-road form {
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+/*=============== LOCOMOTIV SECTION ===============*/
+
+.locomotiv form {
+    grid-template-columns: repeat(3,1fr);
+}
+
+/*=============== COOPERATION SECTION ===============*/
+
+.cooperation form  div:nth-child(1) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.cooperation form div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+/*=============== CARRYING SECTION ===============*/
+
+.carrying form {
+    grid-template-columns: repeat(3,1fr);
+}
+
+.carrying-section > form input {
+    padding: 0.7rem;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    margin-left: 1rem;
+    width: 300px;
+}
+
+
+/*=============== Activity SECTION ===============*/
+
+.activity div:nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+.activity div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.activity div:nth-child(3) {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+/*=============== TRAIN CONNECTION SECTION ===============*/
+.train-connection form {
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+/*=============== SMALL CONTAINERS SECTION ===============*/
+.small-containers form  {
+margin-top: 2rem;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+}
+
+.small-containers form input {
+    padding: 0.7rem;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    margin: 1rem;
+}
+
+
+
+main {
+    margin-left: 15%;
+}
+
+
